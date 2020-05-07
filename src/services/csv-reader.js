@@ -2,7 +2,7 @@ import Papa from 'papaparse';
 
 
 export class CsvReader {
-    readCsv(path, deleteHeader = false) {
+    readCsv(path, ignoreHeader = false) {
         return fetch(path).then(response => {
             const reader = response.body.getReader();
             const decoder = new TextDecoder('utf-8');
@@ -18,7 +18,7 @@ export class CsvReader {
         }).then(csvData => {
             return new Promise((resolve, error) => Papa.parse(csvData, 
                 {complete: csvDetails => {
-                    const returnedArray = deleteHeader ? csvDetails.data.slice(1) : csvDetails.data.slice();
+                    const returnedArray = ignoreHeader ? csvDetails.data.slice(1) : csvDetails.data.slice();
                     resolve(returnedArray);
                 }, error}));
         });

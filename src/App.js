@@ -1,9 +1,7 @@
 import React, {useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { SurvivalDataService } from './services/survival-data-service';
-
-const survivalDataService = new SurvivalDataService();
+import { survivalDataService } from './services/survival-data-service';
 
 function App() {
   useEffect(() => {
