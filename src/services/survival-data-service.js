@@ -6,10 +6,10 @@ const csvReader = new CsvReader();
 class SurvivalDataService {
     data = null;
 
-    readSurvivalDataFromCsv() {
+    readSurvivalData() {
         return this.data ? 
             new Promise((resolve, reject) => resolve(this.data)) : 
-            csvReader.readCsv(path, true).then(csvArray => {
+            csvReader.readCsv(path).then(csvArray => {
                 this.data = csvArray;
                 return csvArray;
             });

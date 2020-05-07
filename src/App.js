@@ -1,31 +1,13 @@
-import React, {useEffect } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import { survivalDataService } from './services/survival-data-service';
+import { Histogram } from './components/graphs/histogram/histogram';
 
 function App() {
-  useEffect(() => {
-    survivalDataService.readSurvivalDataFromCsv().then((data) => {
-      console.log(data);
-    })
-  }, []);
+
   
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Histogram></Histogram>
     </div>
   );
 }
