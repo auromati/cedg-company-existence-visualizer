@@ -1,6 +1,9 @@
 ﻿
 ## Available Scripts
 
+### `npm install`
+Installs all of the projects' dependencies
+
 
 ### `npm start`
 
@@ -19,3 +22,11 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Important libraries
+
+### React
+Library for building the interface. See the tutorial [here](https://reactjs.org/tutorial/tutorial.html)
+
+### Lodash
+Library useful for data manipulation. See the docs [here](https://lodash.com/docs/4.17.15)
