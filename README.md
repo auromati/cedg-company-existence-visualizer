@@ -26,7 +26,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Important libraries
 
 ### React
-Library for building the interface. See the tutorial [here](https://reactjs.org/tutorial/tutorial.html)
+Library for building the interface. Look at the tutorial [here](https://reactjs.org/tutorial/tutorial.html)
 
 ### Lodash
-Library useful for data manipulation. See the docs [here](https://lodash.com/docs/4.17.15)
+Library useful for data manipulation. Look at the docs [here](https://lodash.com/docs/4.17.15)
+
+### Recharts
+Library used for creating graphs. Look at some examples [here](http://recharts.org/en-US/examples/)
