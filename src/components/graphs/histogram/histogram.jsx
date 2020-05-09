@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { readHistogramData } from './histogram-data-reader';
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   } from 'recharts';
+import { SurvivalDataContext } from '../../../App';
 
 export function Histogram() {
-    const [histogramData, setHistogramData] = useState(null);
+    const survivalData = useContext(SurvivalDataContext);
+    const [histogramData, setHistogramData] = useState([]);
     useEffect(() => {
-        readHistogramData().then((data) => {
-            setHistogramData(data);
-        })
-    }, []);
-
+      setHistogramData(readHistogramData(survivalData));
+    }, [survivalData]);
     return (
         <BarChart
           width={500}
