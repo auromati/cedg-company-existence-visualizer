@@ -3,6 +3,8 @@ import './App.css';
 import { Histogram } from './components/graphs/histogram/histogram';
 import { survivalDataService } from './services/survival-data-service';
 import { PanelPkd } from './components/graphs/pkd/panelPkd';
+import { ShareholderController } from './components/graphs/durationByShareholder/shareholderController';
+
 
 export const SurvivalDataContext = React.createContext();
 
@@ -20,6 +22,7 @@ function App() {
       <div className="App">
         <Histogram></Histogram>
         <PanelPkd></PanelPkd>
+        <ShareholderController></ShareholderController>
       </div>
     </SurvivalDataContext.Provider>
   );
