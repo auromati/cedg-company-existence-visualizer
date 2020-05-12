@@ -11,6 +11,7 @@ function App() {
 
   useEffect(() => {
     survivalDataService.readSurvivalData().then(newSurvivalData => {
+      console.log(newSurvivalData);
       setSurvivalData(newSurvivalData);
     });
   }, []);

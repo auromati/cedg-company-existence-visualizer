@@ -1,18 +1,24 @@
-import path from '../data/survival.csv';
-import { CsvReader } from './csv-reader';
-
-const csvReader = new CsvReader();
+import path from '../data/survival_full.csv';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import csvReader from 'workerize-loader!./csv-reader';
 
 class SurvivalDataService {
     data = null;
 
     readSurvivalData() {
-        return this.data ? 
-            new Promise((resolve, reject) => resolve(this.data)) : 
-            csvReader.readCsv(path).then(csvArray => {
-                this.data = csvArray;
-                return csvArray;
-            });
+        return new Promise((resolve, reject) => {
+            if (this.data) {
+                resolve(this.data);
+            }
+            const reader = csvReader();
+            reader.addEventListener('message', e => {
+                if (e.data.type) {
+                    return;
+                }
+                resolve(e.data);
+            })
+            reader.readCsv(path);
+        });
     }
 }
 
