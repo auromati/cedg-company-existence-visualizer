@@ -16,6 +16,8 @@ export function ShareholderController() {
 
     return (
         <div>
+            <h1>Doświadczenie ma znaczenie</h1>
+            <h3>Osoby, które mają udziały w innych firmach, lepiej prowadzą biznes</h3>
             <Form>
                 <Form.Group controlId="shareholder.isShareholder">
                     <Form.Label>Właściciel ma udziały w innej firmie</Form.Label>
