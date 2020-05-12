@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Pkd } from './pkd';
 import { Form } from 'react-bootstrap';
+import { pkdSections, pkdDivisions, pkdGroups, pkdClasses } from './dic';
 
 const ALL = "All";
 
@@ -12,10 +13,10 @@ const renderOptions = (options) => {
 
 const getData = () => {
     return {
-        allSections: ["M - Opis"],
-        allDivisions: ["M69 - Opis", "M70 - Opis"],
-        allGroups: ["M691 - Opis", "M692 - Opis", "M701 - Opis", "M702 - Opis"],
-        allClasses: ["M6910 - Opis", "M6920 - Opis", "M7010 - Opis", "M7021 - Opis", "M7022 - Opis"],
+        allSections: JSON.parse(pkdSections),
+        allDivisions: JSON.parse(pkdDivisions),
+        allGroups: JSON.parse(pkdGroups),
+        allClasses: JSON.parse(pkdClasses),
     }
 }
 
@@ -49,10 +50,12 @@ export function PanelPkd() {
     const [selected, setSelected] = useState(selectedState);
 
     const updatePkds = (code) => {
-        const str = shortenCode(code, 4);
-        const avDevisions = addAll(pkds.allDivisions.filter(s => s.startsWith(str)));
-        const avGroups = addAll(pkds.allGroups.filter(s => s.startsWith(str)));
-        const avClasses = addAll(pkds.allClasses.filter(s => s.startsWith(str)));
+        const section = code.length >= 1 ? code.substring(0, 1) : "";
+        const division = code.length >= 3 ? code.substring(0, 3) : ""
+        const group = code.length >= 4 ? code.substring(0, 4) : "";
+        const avDevisions = addAll(pkds.allDivisions.filter(s => s.startsWith(section)));
+        const avGroups = addAll(pkds.allGroups.filter(s => s.startsWith(division)));
+        const avClasses = addAll(pkds.allClasses.filter(s => s.startsWith(group)));
 
         setPkds({ ...pkds, avDevisions, avGroups, avClasses });
     }
