@@ -12,6 +12,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
+    "react-input-slider": "^5.1.7",
     "react-scripts": "3.4.1",
     "recharts": "^1.8.5",
     "workerize-loader": "^1.2.0"
