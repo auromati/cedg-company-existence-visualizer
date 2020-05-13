@@ -6,6 +6,7 @@ import { PanelPkd } from './components/graphs/pkd/panelPkd';
 import { ShareholderController } from './components/graphs/durationByShareholder/shareholderController';
 import { PlacesController } from './components/graphs/numOfPlaces/placesController';
 import { LicencesController } from './components/graphs/numOfLicences/licencesController';
+import { VoivodeshipController } from './components/graphs/correctVoivodeship/voivodeshipController';
 export const SurvivalDataContext = React.createContext();
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <ShareholderController/>
         <PlacesController/>
         <LicencesController/>
+        <VoivodeshipController/>
       </div>
     </SurvivalDataContext.Provider>
   );
