@@ -4,6 +4,7 @@ import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   } from 'recharts';
 import { SurvivalDataContext } from '../../../App';
+import Spinner from 'react-bootstrap/Spinner';
 
 export function Histogram() {
     const survivalData = useContext(SurvivalDataContext);
@@ -11,8 +12,11 @@ export function Histogram() {
     useEffect(() => {
       setHistogramData(readHistogramData(survivalData));
     }, [survivalData]);
-    return (
-        <BarChart
+    return !histogramData.length ?
+    <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+    </Spinner> :
+        (<BarChart
           width={500}
           height={300}
           data={histogramData}

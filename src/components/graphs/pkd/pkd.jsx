@@ -4,7 +4,7 @@ import {
 } from 'recharts';
 import { SurvivalDataContext } from '../../../App';
 import { readPkdData } from './pkd-data-reader';
-
+import Spinner from 'react-bootstrap/Spinner';
 
 export function Pkd({ selected }) {
     const survivalData = useContext(SurvivalDataContext);
@@ -17,9 +17,12 @@ export function Pkd({ selected }) {
 
         setHistogramData(readPkdData(survivalData, section, division, group, pkdClass));
     }, [survivalData, selected]);
-    return (
+    return !histogramData.length ?
+    <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+    </Spinner> :(
         <BarChart
-            width={500}
+            width={800}
             height={300}
             data={histogramData}
             margin={{

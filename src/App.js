@@ -3,6 +3,7 @@ import './App.css';
 import { Histogram } from './components/graphs/histogram/histogram';
 import { survivalDataService } from './services/survival-data-service';
 import { PanelPkd } from './components/graphs/pkd/panelPkd';
+import { Home } from './components/home/home';
 
 export const SurvivalDataContext = React.createContext();
 
@@ -19,7 +20,7 @@ function App() {
   return (
     <SurvivalDataContext.Provider value={survivalData}>
       <div className="App">
-        <Histogram></Histogram>
+        <Home></Home>
         <PanelPkd></PanelPkd>
       </div>
     </SurvivalDataContext.Provider>

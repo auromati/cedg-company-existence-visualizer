@@ -97,8 +97,9 @@ export function PanelPkd() {
     }
 
     return (
-        <div>
+        <div style={{display: 'inline-block'}}>
             <Form>
+                <Form.Row>
                 <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                     <Form.Label>PKD Section</Form.Label>
                     <Form.Control as="select" size="sm" custom value={selected.section} onChange={(event) => setValue(event, 0)} >
@@ -123,6 +124,7 @@ export function PanelPkd() {
                         {renderOptions(pkds.avClasses)}
                     </Form.Control>
                 </Form.Group>
+                </Form.Row>
             </Form>
             <Pkd selected={selected}></Pkd>
         </div>
