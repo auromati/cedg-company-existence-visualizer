@@ -7,6 +7,7 @@ export function readShareHolderData(survivalData, isShareHolder, monthsPerBin=5)
     if(monthsPerBin === 1) {
         return map(grouped,(count, months) => ({count, months}));
     }
+
     return map(grouped, (count, months) => ({ 
         count,
         months: `${months*monthsPerBin}-${(parseInt(months) + 1) * monthsPerBin - 1}`

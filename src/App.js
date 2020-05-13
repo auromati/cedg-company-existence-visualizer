@@ -4,8 +4,8 @@ import { Histogram } from './components/graphs/histogram/histogram';
 import { survivalDataService } from './services/survival-data-service';
 import { PanelPkd } from './components/graphs/pkd/panelPkd';
 import { ShareholderController } from './components/graphs/durationByShareholder/shareholderController';
-
-
+import { PlacesController } from './components/graphs/numOfPlaces/placesController';
+import { LicencesController } from './components/graphs/numOfLicences/licencesController';
 export const SurvivalDataContext = React.createContext();
 
 function App() {
@@ -22,7 +22,9 @@ function App() {
       <div className="App">
         <Histogram></Histogram>
         <PanelPkd></PanelPkd>
-        <ShareholderController></ShareholderController>
+        <ShareholderController/>
+        <PlacesController/>
+        <LicencesController/>
       </div>
     </SurvivalDataContext.Provider>
   );
