@@ -8,6 +8,7 @@ export function readCsv(path) {
 
         let result = '';
         return reader.read().then(function process({ done, value }) {
+            console.log('d');
             if (done) {
                 return result;
             }
@@ -15,11 +16,13 @@ export function readCsv(path) {
             return reader.read().then(process);
         });
     }).then(csvData => {
+        console.log('dd');
         Papa.parse(csvData,
             {
                 header: true,
                 dynamicTyping: true,
                 skipEmptyLines: true,
+                delimiter: ',',
                 complete: csvDetails => {
                     const returnedArray = csvDetails.data.slice();
                     postMessage(returnedArray);
