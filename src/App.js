@@ -14,7 +14,6 @@ function App() {
 
   useEffect(() => {
     survivalDataService.readSurvivalData().then(newSurvivalData => {
-      console.log(newSurvivalData);
       setSurvivalData(newSurvivalData);
     });
   }, []);
@@ -28,6 +27,9 @@ function App() {
         <PlacesController/>
         <LicencesController/>
         <VoivodeshipController/>
+        <ShareholderController />
+        <PlacesController />
+        <LicencesController />
       </div>
     </SurvivalDataContext.Provider>
   );
