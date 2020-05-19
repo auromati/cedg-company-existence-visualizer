@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    width: 100%;
+    min-height: 50vh;
+    height:400px;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.heading {
+    text-align: left;
+    max-width: 600px;
+    animation: fadein 1s ease-out;
+}
+
+.ceidg {
+    width: 300px;
+    max-width: 100%;
+    margin-left: 40px;
+    animation: fadein 1s ease-out;
+    border-radius: 50%;
+    box-shadow: 25px 25px 0 60px rgba(0,0,0,0.03);
+    background: transparent;
+}
+
+@keyframes fadein {
+    from {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Pkd } from './pkd';
-import { Form } from 'react-bootstrap';
+import { Form, Container, Row, Col } from 'react-bootstrap';
 import { pkdSections, pkdDivisions, pkdGroups, pkdClasses } from './dic';
 
 const ALL = "All";
 
 const renderOptions = (options) => {
     return options.map((value) => {
-        return <option>{value}</option>;
+        return <option key={value}>{value}</option>;
     });
 };
 
@@ -97,36 +97,42 @@ export function PanelPkd() {
     }
 
     return (
-        <div style={{display: 'inline-block'}}>
-            <Form>
-                <Form.Row>
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                    <Form.Label>PKD Section</Form.Label>
-                    <Form.Control as="select" size="sm" custom value={selected.section} onChange={(event) => setValue(event, 0)} >
-                        {renderOptions(pkds.avSections)}
-                    </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                    <Form.Label>PKD Division</Form.Label>
-                    <Form.Control as="select" size="sm" custom value={selected.division} onChange={(event) => setValue(event, 1)}>
-                        {renderOptions(pkds.avDivisions)}
-                    </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                    <Form.Label>PKD Group</Form.Label>
-                    <Form.Control as="select" size="sm" custom value={selected.group} onChange={(event) => setValue(event, 3)}>
-                        {renderOptions(pkds.avGroups)}
-                    </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                    <Form.Label>PKD Class</Form.Label>
-                    <Form.Control as="select" size="sm" custom value={selected.pkdClass} onChange={(event) => setValue(event, 4)}>
-                        {renderOptions(pkds.avClasses)}
-                    </Form.Control>
-                </Form.Group>
-                </Form.Row>
-            </Form>
-            <Pkd selected={selected}></Pkd>
-        </div>
+        <Container>
+            <Row>
+                <Col>
+                <Form>
+                    <Form.Row>
+                    <Form.Group controlId="exampleForm.SelectCustomSizeSm">
+                        <Form.Label>PKD Section</Form.Label>
+                        <Form.Control as="select" size="sm" custom value={selected.section} onChange={(event) => setValue(event, 0)} >
+                            {renderOptions(pkds.avSections)}
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId="exampleForm.SelectCustomSizeSm">
+                        <Form.Label>PKD Division</Form.Label>
+                        <Form.Control as="select" size="sm" custom value={selected.division} onChange={(event) => setValue(event, 1)}>
+                            {renderOptions(pkds.avDivisions)}
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId="exampleForm.SelectCustomSizeSm">
+                        <Form.Label>PKD Group</Form.Label>
+                        <Form.Control as="select" size="sm" custom value={selected.group} onChange={(event) => setValue(event, 3)}>
+                            {renderOptions(pkds.avGroups)}
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId="exampleForm.SelectCustomSizeSm">
+                        <Form.Label>PKD Class</Form.Label>
+                        <Form.Control as="select" size="sm" custom value={selected.pkdClass} onChange={(event) => setValue(event, 4)}>
+                            {renderOptions(pkds.avClasses)}
+                        </Form.Control>
+                    </Form.Group>
+                    </Form.Row>
+                </Form>
+                </Col>
+                <Col>
+                    <Pkd selected={selected}></Pkd>
+                </Col>
+            </Row>
+        </Container>
     );
 }

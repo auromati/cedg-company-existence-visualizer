@@ -5,14 +5,18 @@ body {
   margin: 0;
   font-family: Poppins, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f6f6f6 !important;
+  color: #646464 !important;
+  font-weight: 300 !important;
 }
 
 h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
   font-family: Jost;
   margin: 0;
+  color: #3bb2ec;
   font-weight: bold !important;
 }
 

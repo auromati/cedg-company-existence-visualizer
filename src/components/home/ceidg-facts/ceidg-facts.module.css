@@ -1,0 +1,27 @@
+
+.ceidgFacts {
+    width: 100%;
+    display: block;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(102,211,208,1) 28%, rgba(102,187,128,1) 100%);
+    color: #fff;
+    padding: 2em 0;
+}
+
+.ceidgFact {
+    animation: fadein 1s ease-out;
+    color: #fff;
+}
+
+.ceidgFact h1 {
+    color: #fff;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
