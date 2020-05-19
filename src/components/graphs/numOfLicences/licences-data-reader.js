@@ -24,6 +24,6 @@ export function readLicencesData(survivalData, monthsPerBin = 5 ) {
         '0': numOfLicencesCount[0] || 0,
         '1': numOfLicencesCount[1] || 0,
         '2': numOfLicencesCount[2] || 0,
-        '3': numOfLicencesCount[3] || 0
+        '3+': numOfLicencesCount[3] || 0
     }));
 }

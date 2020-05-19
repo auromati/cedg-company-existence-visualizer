@@ -29,10 +29,7 @@ function App() {
         <PlacesController/>
         <LicencesController/>
         <VoivodeshipController/>
-        <ShareholderController />
-        <PlacesController />
-        <LicencesController />
-        <PivotComponent />
+        <ShareholderController/>
       </div>
     </SurvivalDataContext.Provider>
   );

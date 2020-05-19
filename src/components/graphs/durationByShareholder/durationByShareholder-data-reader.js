@@ -2,6 +2,7 @@ import { countBy, map, filter } from 'lodash';
 
 export function readShareHolderData(survivalData, isShareHolder, monthsPerBin=5) {
     let data = [];
+    isShareHolder = isShareHolder ? 1 : 0;
     data = filter(survivalData, (row) => row.ShareholderInOtherCompanies === isShareHolder)
     const grouped = countBy(data, (d) => parseInt(d.DurationOfExistenceInMonths / monthsPerBin) );
     if(monthsPerBin === 1) {

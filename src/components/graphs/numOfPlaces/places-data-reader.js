@@ -21,11 +21,11 @@ export function readPlacesData(survivalData, monthsPerBin = 5 ) {
 
     return map(data, (numOfPlacesCount, monthWindow) => ({
         'month': monthsPerBin === 1 ? monthWindow : `${monthWindow*monthsPerBin}-${(parseInt(monthWindow) + 1) * monthsPerBin - 1}`,
-        '0': numOfPlacesCount[0] || 0,
-        '1': numOfPlacesCount[1] || 0,
-        '2': numOfPlacesCount[2] || 0,
-        '3': numOfPlacesCount[3] || 0,
-        '4': numOfPlacesCount[4] || 0,
-        '5': numOfPlacesCount[5] || 0
+        '1': numOfPlacesCount[0] || 0,
+        '2': numOfPlacesCount[1] || 0,
+        '3': numOfPlacesCount[2] || 0,
+        '4': numOfPlacesCount[3] || 0,
+        '5': numOfPlacesCount[4] || 0,
+        '6+': numOfPlacesCount[5] || 0
     }));
 }
