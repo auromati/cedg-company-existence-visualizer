@@ -7,7 +7,9 @@ import { ShareholderController } from './components/graphs/durationByShareholder
 import { PlacesController } from './components/graphs/numOfPlaces/placesController';
 import { LicencesController } from './components/graphs/numOfLicences/licencesController';
 import { VoivodeshipController } from './components/graphs/correctVoivodeship/voivodeshipController';
+import { PivotComponent } from './components/graphs/pivotComponent/pivotComponent';
 export const SurvivalDataContext = React.createContext();
+
 
 function App() {
   const [survivalData, setSurvivalData] = useState([]);
@@ -30,6 +32,7 @@ function App() {
         <ShareholderController />
         <PlacesController />
         <LicencesController />
+        <PivotComponent />
       </div>
     </SurvivalDataContext.Provider>
   );

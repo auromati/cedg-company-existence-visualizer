@@ -4,7 +4,7 @@ import {
     Brush
 } from 'recharts';
 import { SurvivalDataContext } from '../../../App';
-import { readVoivodeshipDataa, readVoivodeshipData } from './correctVoivodeship-data-reader';
+import { readVoivodeshipData } from './correctVoivodeship-data-reader';
 
 export function Voivodeship({isVoivodeshipCorrect, monthsPerBin}) {
     const survivalData = useContext(SurvivalDataContext);

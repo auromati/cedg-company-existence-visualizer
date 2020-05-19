@@ -1,8 +1,8 @@
-import { groupBy, countBy, map } from 'lodash';
+import { countBy, groupBy, map } from 'lodash';
 
 export function readPlacesData(survivalData, monthsPerBin = 5 ) {
     let data = [];
-    data = groupBy(survivalData, (row) => (Math.floor(row.DurationOfExistenceInMonths / monthsPerBin)));
+    data = groupBy(survivalData, (row) => (parseInt(row.DurationOfExistenceInMonths / monthsPerBin)));
     
     for(let months in data) {
         data[months] = countBy(data[months], 'NoOfAdditionalPlaceOfTheBusiness');

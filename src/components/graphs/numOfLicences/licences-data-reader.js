@@ -2,7 +2,7 @@ import { groupBy, countBy, map } from 'lodash';
 
 export function readLicencesData(survivalData, monthsPerBin = 5 ) {
     let data = [];
-    data = groupBy(survivalData, (row) => (Math.floor(row.DurationOfExistenceInMonths / monthsPerBin)));
+    data = groupBy(survivalData, (row) => (parseInt(row.DurationOfExistenceInMonths / monthsPerBin)));
     
     for(let months in data) {
         data[months] = countBy(data[months], 'NoOfLicences');
