@@ -107,7 +107,6 @@ export function PanelPkd() {
             <Row>
                 <Col md={6}>
                 <Form style={{fontSize: '0.8em'}}>
-                    <Form.Row>
                     <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                         <Form.Label>Sekcja PKD</Form.Label>
                         <Form.Control as="select" size="sm" custom value={selected.section} onChange={(event) => setValue(event, 0)} >
@@ -132,7 +131,6 @@ export function PanelPkd() {
                             {renderOptions(pkds.avClasses)}
                         </Form.Control>
                     </Form.Group>
-                    </Form.Row>
                 </Form>
                 </Col>
                 <Col md={6}>
