@@ -1,6 +1,25 @@
 import Papa from 'papaparse';
 
 
+const wojMap = {
+    'łódzkie': 1,
+    'świętokrzyskie': 2,
+    'wielkopolskie': 3,
+    'kujawsko-pomorskie': 4,
+    'małopolskie':5,
+    'dolnośląskie': 6,
+    'lubelskie': 7,
+    'lubuskie': 8,
+    'mazowieckie': 9,
+    'opolskie': 10,
+    'podlaskie': 11,
+    'pomorskie': 12,
+    'śląskie': 13,
+    'podkarpackie': 14,
+    'warmińsko-mazurskie': 15,
+    'zachodniopomorskie': 16
+}
+
 export function readCsv(path) {
     const promise = fetch(path).then(response => {
         const reader = response.body.getReader();
@@ -8,7 +27,6 @@ export function readCsv(path) {
 
         let result = '';
         return reader.read().then(function process({ done, value }) {
-            console.log('d');
             if (done) {
                 return result;
             }
@@ -16,7 +34,6 @@ export function readCsv(path) {
             return reader.read().then(process);
         });
     }).then(csvData => {
-        console.log('dd');
         Papa.parse(csvData,
             {
                 header: true,
@@ -25,7 +42,9 @@ export function readCsv(path) {
                 delimiter: ',',
                 complete: csvDetails => {
                     const returnedArray = csvDetails.data.slice();
-                    postMessage(returnedArray);
+                    const mappedArray = returnedArray.map(row => ({...row, voivodeshipId: wojMap[row.MainAddressVoivodeship]}));
+                    console.log(mappedArray);
+                    postMessage(mappedArray);
                 },
                 error: error => console.log(error)
             });
