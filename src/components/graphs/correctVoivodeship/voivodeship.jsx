@@ -11,6 +11,6 @@ export function Voivodeship({isVoivodeshipCorrect, monthsPerBin}) {
     }, [survivalData, isVoivodeshipCorrect, monthsPerBin]);
 
     return (
-        <CustomHistogram data={histogramData} xAxisKey="months" yAxisKey="count"></CustomHistogram>
+        <CustomHistogram data={histogramData} xAxisKey="months" yAxisKey="Upadły" yAxisKey2="Przetrwały"></CustomHistogram>
     );
 }

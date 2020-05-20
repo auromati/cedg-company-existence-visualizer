@@ -53,11 +53,11 @@ export function PanelPkd() {
         const section = code.length >= 1 ? code.substring(0, 1) : "";
         const division = code.length >= 3 ? code.substring(0, 3) : ""
         const group = code.length >= 4 ? code.substring(0, 4) : "";
-        const avDevisions = addAll(pkds.allDivisions.filter(s => s.startsWith(section)));
+        const avDivisions = addAll(pkds.allDivisions.filter(s => s.startsWith(section)))
         const avGroups = addAll(pkds.allGroups.filter(s => s.startsWith(division)));
         const avClasses = addAll(pkds.allClasses.filter(s => s.startsWith(group)));
 
-        setPkds({ ...pkds, avDevisions, avGroups, avClasses });
+        setPkds({ ...pkds, avDivisions, avGroups, avClasses });
     }
 
     const shortenCode = (code, maxShortenCodeLength) => {

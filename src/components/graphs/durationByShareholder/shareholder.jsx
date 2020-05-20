@@ -11,6 +11,6 @@ export function Shareholder({formData}) {
     }, [survivalData, formData]);
 
     return (
-        <CustomHistogram data={histogramData} xAxisKey="months" yAxisKey="count"></CustomHistogram>
+        <CustomHistogram data={histogramData} xAxisKey="months" yAxisKey="Upadły" yAxisKey2="Przetrwały"></CustomHistogram>
     );
 }
