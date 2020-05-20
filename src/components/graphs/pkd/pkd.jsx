@@ -11,6 +11,6 @@ export function Pkd({ selected }) {
         const data = readPkdData(survivalData, selected.code);
         setHistogramData(data);
     }, [survivalData, selected]);
-    return(<CustomHistogram data={histogramData} xAxisKey="months" yAxisKey="count"></CustomHistogram>
+    return(<CustomHistogram data={histogramData} xAxisKey="months" yAxisKey="Upadły" yAxisKey2="Przetrwały"></CustomHistogram>
         );
 }
