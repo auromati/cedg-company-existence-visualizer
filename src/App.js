@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { survivalDataService } from './services/survival-data-service';
 import { PanelPkd } from './components/graphs/pkd/panelPkd';
-import { ShareholderController } from './components/graphs/durationByShareholder/shareholderController';
-import { PlacesController } from './components/graphs/numOfPlaces/placesController';
-import { LicencesController } from './components/graphs/numOfLicences/licencesController';
-import { VoivodeshipController } from './components/graphs/correctVoivodeship/voivodeshipController';
+
 import { Home } from './components/home/home';
 export const SurvivalDataContext = React.createContext();
+
 
 function App() {
   const [survivalData, setSurvivalData] = useState([]);
@@ -22,14 +20,6 @@ function App() {
     <SurvivalDataContext.Provider value={survivalData}>
       <div className="App">
         <Home></Home>
-        <PanelPkd></PanelPkd>
-        <ShareholderController/>
-        <PlacesController/>
-        <LicencesController/>
-        <VoivodeshipController/>
-        <ShareholderController />
-        <PlacesController />
-        <LicencesController />
       </div>
     </SurvivalDataContext.Provider>
   );

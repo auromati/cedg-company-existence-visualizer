@@ -5,12 +5,12 @@ import Slider from 'react-input-slider';
 
 export function PlacesController() {
     const groupsState = {
-        '0': true,
         '1': true,
         '2': true,
         '3': true,
         '4': true,
-        '5': true
+        '5': true,
+        '6+': true
     }
     const [groups, setGroups] = useState(groupsState);
     const setGroup = (event) => {
@@ -29,13 +29,6 @@ export function PlacesController() {
             <Form>
                 <Form.Group controlId="shareholder.isShareholder">
                     <Form.Label>Liczba placówek firmy</Form.Label>
-                    <Form.Check
-                        type='checkbox'
-                        label='0'
-                        name='0'
-                        defaultChecked="true"
-                        onChange={setGroup}
-                    />
                     <Form.Check
                         type='checkbox'
                         label='1'
@@ -66,8 +59,15 @@ export function PlacesController() {
                     />
                     <Form.Check
                         type='checkbox'
-                        label='5+'
+                        label='5'
                         name='5'
+                        defaultChecked="true"
+                        onChange={setGroup}
+                    />
+                    <Form.Check
+                        type='checkbox'
+                        label='6+'
+                        name='6+'
                         defaultChecked="true"
                         onChange={setGroup}
                     />

@@ -8,7 +8,7 @@ export function LicencesController() {
         '0': true,
         '1': true,
         '2': true,
-        '3': true
+        '3+': true
     }
     const [groups, setGroups] = useState(groupsState);
     const setGroup = (event) => {
@@ -51,7 +51,7 @@ export function LicencesController() {
                     <Form.Check
                         type='checkbox'
                         label='3+'
-                        name='3'
+                        name='3+'
                         defaultChecked="true"
                         onChange={setGroup}
                     />

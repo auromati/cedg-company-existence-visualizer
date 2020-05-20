@@ -6,12 +6,12 @@ import { SurvivalDataContext } from '../../../App';
 import { readPlacesData } from './places-data-reader';
 
 const colors = {
-    '0':'#b35806',
-    '1':'#f1a340',
-    '2':'#fee0b6',
-    '3':'#d8daeb',
-    '4':'#998ec3',
-    '5':'#542788'
+    '1':'#b35806',
+    '2':'#f1a340',
+    '3':'#fee0b6',
+    '4':'#d8daeb',
+    '5':'#998ec3',
+    '6+':'#542788'
 }
 
 const renderLines = (groups) => {

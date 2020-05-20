@@ -9,7 +9,7 @@ const colors = {
     '0':'#ca0020',
     '1':'#f4a582',
     '2':'#92c5de',
-    '3':'#0571b0'
+    '3+':'#0571b0'
 }
 
 const renderLines = (groups) => {
