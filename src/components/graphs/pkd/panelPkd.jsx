@@ -51,8 +51,8 @@ export function PanelPkd() {
 
     const updatePkds = (code) => {
         const section = code.length >= 1 ? code.substring(0, 1) : "";
-        const division = code.length >= 3 ? code.substring(0, 3) : ""
-        const group = code.length >= 4 ? code.substring(0, 4) : "";
+        const division = code.length >= 3 ? code.substring(0, 3) : section;
+        const group = code.length >= 4 ? code.substring(0, 4) : division;
         const avDivisions = addAll(pkds.allDivisions.filter(s => s.startsWith(section)))
         const avGroups = addAll(pkds.allGroups.filter(s => s.startsWith(division)));
         const avClasses = addAll(pkds.allClasses.filter(s => s.startsWith(group)));
@@ -98,15 +98,15 @@ export function PanelPkd() {
 
 
     return (<React.Fragment>
-            <Row>
-                <Col>
+        <Row>
+            <Col>
                 <h1>Wybierz odpowiednią branżę</h1>
-                <p style={{paddingBottom: "1rem"}}>Najlepszą przeżywalność mają opieka zdrowotna i pomoc społeczna, najgorszą - finanse.</p>
-                </Col>
-            </Row>
-            <Row>
-                <Col md={6}>
-                <Form style={{fontSize: '0.8em'}}>
+                <p style={{ paddingBottom: "1rem" }}>Najlepszą przeżywalność mają opieka zdrowotna i pomoc społeczna, najgorszą - finanse.</p>
+            </Col>
+        </Row>
+        <Row>
+            <Col md={6}>
+                <Form style={{ fontSize: '0.8em' }}>
                     <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                         <Form.Label>Sekcja PKD</Form.Label>
                         <Form.Control as="select" size="sm" custom value={selected.section} onChange={(event) => setValue(event, 0)} >
@@ -132,9 +132,9 @@ export function PanelPkd() {
                         </Form.Control>
                     </Form.Group>
                 </Form>
-                </Col>
-                <Col md={6}>
-                    <Pkd selected={selected}></Pkd>
-                </Col>
-            </Row></React.Fragment>);
+            </Col>
+            <Col md={6}>
+                <Pkd selected={selected}></Pkd>
+            </Col>
+        </Row></React.Fragment>);
 }
