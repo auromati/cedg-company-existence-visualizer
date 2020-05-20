@@ -105,7 +105,7 @@ export function PanelPkd() {
                 </Col>
             </Row>
             <Row>
-                <Col>
+                <Col md={6}>
                 <Form style={{fontSize: '0.8em'}}>
                     <Form.Row>
                     <Form.Group controlId="exampleForm.SelectCustomSizeSm">
@@ -135,7 +135,7 @@ export function PanelPkd() {
                     </Form.Row>
                 </Form>
                 </Col>
-                <Col>
+                <Col md={6}>
                     <Pkd selected={selected}></Pkd>
                 </Col>
             </Row></React.Fragment>);
