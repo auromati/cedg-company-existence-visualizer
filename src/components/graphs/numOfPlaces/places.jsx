@@ -4,14 +4,15 @@ import {
 } from 'recharts';
 import { SurvivalDataContext } from '../../../App';
 import { readPlacesData } from './places-data-reader';
+import { CustomLinear } from '../customLinear/customLinear';
 
 const colors = {
-    '1':'#b35806',
-    '2':'#f1a340',
-    '3':'#fee0b6',
-    '4':'#d8daeb',
-    '5':'#998ec3',
-    '6+':'#542788'
+    '1':'#66bb80',
+    '2':'#3bb2ec',
+    '3':'#5c8193',
+    '4':'#542788',
+    '5':'#67ff00',
+    '6+':'#d13841'
 }
 
 const renderLines = (groups) => {
@@ -32,21 +33,6 @@ export function Places({groups, monthsPerBin}) {
     }, [survivalData, monthsPerBin]);
 
     return (
-        <LineChart
-            width={500}
-            height={300}
-            data={histogramData}
-            margin={{
-                top: 5, right: 30, left: 20, bottom: 5,
-            }}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            {renderLines(groups)}
-            <Brush dataKey='month' height={30} stroke="#8884d8"/>
-        </LineChart>
+        <CustomLinear data={histogramData} xAxisKey="month" groups={groups} colors={colors}></CustomLinear>
     );
 }

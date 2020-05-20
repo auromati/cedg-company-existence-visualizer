@@ -6,39 +6,30 @@ import Slider from 'react-input-slider';
 export function ShareholderController() {
     const controlsState = {
         isShareholder: true,
-        monthsPerBin: 5
+        monthsPerBin: 1
     }
     const [controls, setControls] = useState(controlsState);
 
     const setShareholder = (event) => {
-        setControls({ ...controls, isShareholder: (event.target.value === 'true') })
+        setControls({ ...controls, isShareholder: !controls.isShareholder })
     }
 
     return (
         <div>
             <h1>Doświadczenie ma znaczenie</h1>
-            <h3>Osoby, które mają udziały w innych firmach, lepiej prowadzą biznes</h3>
-            <Form>
+            Osoby, które mają udziały w innych firmach, lepiej prowadzą biznes
+            <Shareholder 
+                formData={controls}
+            />
+                        <Form>
                 <Form.Group controlId="shareholder.isShareholder">
-                    <Form.Label>Właściciel ma udziały w innej firmie</Form.Label>
                     <Form.Check
-                        type="radio"
-                        label="Tak"
-                        name="Tak"
-                        value={true}
-                        checked={controls.isShareholder}
-                        id="shareholderYes"
-                        onChange={setShareholder}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Nie"
-                        name="Nie"
-                        value={false}
-                        id="shareholderNo"
-                        checked={!controls.isShareholder}
-                        onChange={setShareholder}
-                    />
+                            type="switch"
+                            id="custom-switch"
+                            label="Właściciel ma udziały w innych firmach"
+                            onChange={setShareholder}
+                            checked={controls.isShareholder}
+                        />
                 </Form.Group>
                 <Form.Group controlId="shareHolder.monthsPerBin">
                     <Form.Label>Grupuj co {controls.monthsPerBin} miesiące</Form.Label>
@@ -50,10 +41,6 @@ export function ShareholderController() {
                     />
                 </Form.Group>
             </Form>
-            <Shareholder 
-                isShareholder={controls.isShareholder}
-                monthsPerBin={controls.monthsPerBin}
-            />
         </div>
     );
 }

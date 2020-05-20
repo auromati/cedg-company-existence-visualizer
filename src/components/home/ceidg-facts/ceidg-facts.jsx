@@ -11,26 +11,26 @@ export function CeidgFacts() {
                 <Row>
                     <Col>
                         <div className={styles.ceidgFact}>
-                            <h1>90%</h1>
-                    Fakt 1
+                            <h1>80%</h1>
+                    Firm posiadających ponad 5 placówek przetrwało
                 </div>
                     </Col>
                     <Col>
                         <div className={styles.ceidgFact}>
-                            <h1>90%</h1>
-                    Fakt 2
+                            <h1>77</h1>
+                    Tyle miesięcy wynosi średni czas przetrwania firmy w opiece zdrowotnej
                 </div>
                     </Col>
                     <Col>
                         <div className={styles.ceidgFact}>
-                            <h1>90%</h1>
-                    Fakt 3
+                            <h1>57</h1>
+                    Miesięcy średnio przeżywają firmy z jedną placówką
                 </div>
                     </Col>
                     <Col>
                         <div className={styles.ceidgFact}>
-                            <h1>90%</h1>
-                    Fakt 4
+                            <h1>33%</h1>
+                    Firm przeżyło, mając tylko jedną placówkę
                 </div>
                     </Col>
                 </Row>

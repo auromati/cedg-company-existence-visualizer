@@ -25,46 +25,50 @@ export function PlacesController() {
     return (
         <div>
             <h1>Więcej miejsc, większy sukces</h1>
-            <h3>Firmy, które mają wiele placówek, utrzymują się na rynku dłużej</h3>
+            Firmy, które mają wiele placówek, utrzymują się na rynku dłużej
+            <Places
+                groups={groups}
+                monthsPerBin={controls.monthsPerBin}
+            />
             <Form>
                 <Form.Group controlId="shareholder.isShareholder">
-                    <Form.Label>Liczba placówek firmy</Form.Label>
-                    <Form.Check
+                    <p>Liczba placówek firmy:</p>
+                    <Form.Check inline
                         type='checkbox'
                         label='1'
                         name='1'
                         defaultChecked="true"
                         onChange={setGroup}
                     />
-                    <Form.Check
+                    <Form.Check inline
                         type='checkbox'
                         label='2'
                         name='2'
                         defaultChecked="true"
                         onChange={setGroup}
                     />
-                    <Form.Check
+                    <Form.Check inline
                         type='checkbox'
                         label='3'
                         name='3'
                         defaultChecked="true"
                         onChange={setGroup}
                     />
-                    <Form.Check
+                    <Form.Check inline
                         type='checkbox'
                         label='4'
                         name='4'
                         defaultChecked="true"
                         onChange={setGroup}
                     />
-                    <Form.Check
+                    <Form.Check inline
                         type='checkbox'
                         label='5'
                         name='5'
                         defaultChecked="true"
                         onChange={setGroup}
                     />
-                    <Form.Check
+                    <Form.Check inline
                         type='checkbox'
                         label='6+'
                         name='6+'
@@ -82,10 +86,6 @@ export function PlacesController() {
                     />
                 </Form.Group>
             </Form>
-            <Places
-                groups={groups}
-                monthsPerBin={controls.monthsPerBin}
-            />
         </div>
     );
 }

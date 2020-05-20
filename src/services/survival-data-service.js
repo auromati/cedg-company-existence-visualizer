@@ -1,4 +1,4 @@
-import path from '../data/survival_full.csv';
+import path from '../data/survival_full_new.csv';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import csvReader from 'workerize-loader!./csv-reader';
 

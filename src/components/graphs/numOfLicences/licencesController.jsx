@@ -23,32 +23,36 @@ export function LicencesController() {
     return (
         <div>
             <h1>Licencje drogą do sukcesu</h1>
-            <h3>Firmy, które mają wiele licencji, utrzymują się dłużej</h3>
+            Firmy, które mają wiele licencji, utrzymują się dłużej
+            <Licences
+                groups={groups}
+                monthsPerBin={controls.monthsPerBin}
+            />
             <Form>
                 <Form.Group controlId="shareholder.isShareholder">
-                    <Form.Label>Liczba licencji firmy</Form.Label>
-                    <Form.Check
+                    <p>Liczba licencji firmy</p>
+                    <Form.Check inline
                         type='checkbox'
                         label='0'
                         name='0'
                         defaultChecked="true"
                         onChange={setGroup}
                     />
-                    <Form.Check
+                    <Form.Check inline
                         type='checkbox'
                         label='1'
                         name='1'
                         defaultChecked="true"
                         onChange={setGroup}
                     />
-                    <Form.Check
+                    <Form.Check inline
                         type='checkbox'
                         label='2'
                         name='2'
                         defaultChecked="true"
                         onChange={setGroup}
                     />
-                    <Form.Check
+                    <Form.Check inline
                         type='checkbox'
                         label='3+'
                         name='3+'
@@ -66,10 +70,6 @@ export function LicencesController() {
                     />
                 </Form.Group>
             </Form>
-            <Licences
-                groups={groups}
-                monthsPerBin={controls.monthsPerBin}
-            />
         </div>
     );
 }

@@ -8,7 +8,6 @@ export function readVoivodeshipData(survivalData, isVoivodeshipCorrect, monthsPe
     if(monthsPerBin === 1) {
         return map(grouped,(count, months) => ({count, months}));
     };
-    console.log(survivalData);
 
     return map(grouped, (count, months) => ({ 
         count,

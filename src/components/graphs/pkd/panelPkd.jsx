@@ -96,32 +96,37 @@ export function PanelPkd() {
         updatePkds(code);
     }
 
-    return (
-        <Container>
+    return (<React.Fragment>
             <Row>
                 <Col>
-                <Form>
+                <h1>Wybierz odpowiednią branżę</h1>
+                <p style={{paddingBottom: "1rem"}}>Najlepszą przeżywalność mają opieka zdrowotna i pomoc społeczna, najgorszą - finanse.</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                <Form style={{fontSize: '0.8em'}}>
                     <Form.Row>
                     <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                        <Form.Label>PKD Section</Form.Label>
+                        <Form.Label>Sekcja PKD</Form.Label>
                         <Form.Control as="select" size="sm" custom value={selected.section} onChange={(event) => setValue(event, 0)} >
                             {renderOptions(pkds.avSections)}
                         </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                        <Form.Label>PKD Division</Form.Label>
+                        <Form.Label>Dział PKD</Form.Label>
                         <Form.Control as="select" size="sm" custom value={selected.division} onChange={(event) => setValue(event, 1)}>
                             {renderOptions(pkds.avDivisions)}
                         </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                        <Form.Label>PKD Group</Form.Label>
+                        <Form.Label>Grupa PKD</Form.Label>
                         <Form.Control as="select" size="sm" custom value={selected.group} onChange={(event) => setValue(event, 3)}>
                             {renderOptions(pkds.avGroups)}
                         </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                        <Form.Label>PKD Class</Form.Label>
+                        <Form.Label>Klasa PKD</Form.Label>
                         <Form.Control as="select" size="sm" custom value={selected.pkdClass} onChange={(event) => setValue(event, 4)}>
                             {renderOptions(pkds.avClasses)}
                         </Form.Control>
@@ -132,7 +137,6 @@ export function PanelPkd() {
                 <Col>
                     <Pkd selected={selected}></Pkd>
                 </Col>
-            </Row>
-        </Container>
+            </Row></React.Fragment>
     );
 }
