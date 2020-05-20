@@ -9,6 +9,7 @@ import { PanelPkd } from '../graphs/pkd/panelPkd';
 
 import { LicencesController } from '../graphs/numOfLicences/licencesController';
 import styles from './home.module.css';
+import { PolandMapContainer } from '../graphs/polandMap/polandMapContainer';
 
 export function Home() {
     return (
@@ -37,6 +38,13 @@ export function Home() {
                     <Col md={6}>
                         <div className={styles.graphContainer}>
                             <LicencesController/>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div className={styles.graphContainer}>
+                            <PolandMapContainer></PolandMapContainer>
                         </div>
                     </Col>
                 </Row>
