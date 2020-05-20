@@ -18,7 +18,7 @@ export const PolandMapContainer = () => {
     return (
     <div>
         <h1>Przeanalizuj, gdzie umieścić swoją firmę</h1>
-        Nawięcej miesięcy przeżywają firmy z województwa mazowieckiego, najkrócej z kujawsko-pomorskiego i warmińsko-mazurskiego
+        Najwięcej miesięcy przeżywają firmy z województwa mazowieckiego, najkrócej z kujawsko-pomorskiego i warmińsko-mazurskiego
         <Row>
             <Col xs={5}>
                 <PolandMap data={data} medians={medians}></PolandMap>
