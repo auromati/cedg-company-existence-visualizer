@@ -43,7 +43,6 @@ export function readCsv(path) {
                 complete: csvDetails => {
                     const returnedArray = csvDetails.data.slice();
                     const mappedArray = returnedArray.map(row => ({...row, voivodeshipId: wojMap[row.MainAddressVoivodeship]}));
-                    console.log(mappedArray);
                     postMessage(mappedArray);
                 },
                 error: error => console.log(error)
