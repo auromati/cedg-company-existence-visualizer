@@ -19,7 +19,7 @@ export function CustomLinear({ data, xAxisKey, groups, colors }) {
         {
             data && data.length ? (
                 <ResponsiveContainer width="100%" aspect={2}>
-                    <LineChart data={data} margin={{left: 15, bottom: 30}}>
+                    <LineChart data={data} margin={{left: 15, bottom: 30, right: 5}}>
                         <CartesianGrid strokeDasharray="2 4" />
                         <XAxis dataKey={xAxisKey} stroke="#66bb80"
                         label={{ value: 'Czas przetrwania w miesiącach', position: 'insideBottom', offset: -50 }} />
