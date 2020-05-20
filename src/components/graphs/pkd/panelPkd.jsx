@@ -96,6 +96,7 @@ export function PanelPkd() {
         updatePkds(code);
     }
 
+
     return (<React.Fragment>
             <Row>
                 <Col>
@@ -137,6 +138,5 @@ export function PanelPkd() {
                 <Col>
                     <Pkd selected={selected}></Pkd>
                 </Col>
-            </Row></React.Fragment>
-    );
+            </Row></React.Fragment>);
 }
