@@ -21,7 +21,7 @@ const wojMap = {
 }
 
 export function readCsv(path) {
-    const promise = fetch(path).then(response => {
+    return fetch(path).then(response => {
         const reader = response.body.getReader();
         const decoder = new TextDecoder('utf-8');
 
@@ -34,19 +34,21 @@ export function readCsv(path) {
             return reader.read().then(process);
         });
     }).then(csvData => {
-        Papa.parse(csvData,
+        return new Promise((resolve, reject) => { Papa.parse(csvData,
             {
                 header: true,
                 dynamicTyping: true,
                 skipEmptyLines: true,
+                worker:true,
                 delimiter: ',',
                 complete: csvDetails => {
                     const returnedArray = csvDetails.data.slice();
                     const mappedArray = returnedArray.map(row => ({...row, voivodeshipId: wojMap[row.MainAddressVoivodeship]}));
-                    postMessage(mappedArray);
+                    resolve(mappedArray);
                 },
                 error: error => console.log(error)
-            });
+            }) 
+        });
     });
 
 }
